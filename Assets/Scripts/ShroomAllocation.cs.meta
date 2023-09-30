@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 4108f035101cfab4d85966b1128336fa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - storeShroom: {fileID: 4951305347515724162, guid: 7209a48fdb6dffe4fa294b36702c55d0, type: 3}
+  - forestShroom: {fileID: 677247861919262805, guid: 830ae7e9456b78040aec5e2bbcf1318b, type: 3}
+  - poisonShroom: {fileID: 6229149628183844983, guid: bcf5834d6202a2449a1ff1138a7c19f3, type: 3}
+  - iceShroom: {fileID: 7050420019702383850, guid: a05fc835edad28044b0550ce3a0dc951, type: 3}
+  - desertShroom: {fileID: 5928747237192831224, guid: ae56bcddb9ca5444499c60a74276e292, type: 3}
+  - bogShroom: {fileID: 2010724292530498280, guid: 6d9086c27173c32419d3fd55dc344e60, type: 3}
+  - glitterShroom: {fileID: 3930652500743655018, guid: cc51bd0bcec700e48a6133e7330a3e9f, type: 3}
+  - lavaShroom: {fileID: 5695403288810010598, guid: 34b1359daef6e3143bb34b11b30ee265, type: 3}
+  - crystalShroom: {fileID: 2028565542702636828, guid: b29a3e50243df5447ab05330df8af5c6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

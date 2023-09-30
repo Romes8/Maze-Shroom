@@ -31,10 +31,18 @@ public class Logic : MonoBehaviour
         // Create and populate string arrays
         string[] RedPotion = { "red", "red", "blue" };
         string[] BrokenHandPotion = { "red", "blue" };
+        string[] PoisonPotion = { "poison", "poison", "desert", "frozen"};
+        string[] LovePotion = { "glitter", "glitter", "crystal", "store" };
+        string[] GrowthPotion = { "bog", "bog", "forest", "store" };
+        string[] StrengthPotion = { "lava", "lava", "bog", "frozen" };
+        string[] HastePotion = { "desert", "desert", "crystal", "forest" };
 
         // Add string arrays to the list
-        Recipes.Add("RedPotion", RedPotion);
-        Recipes.Add("BrokenHandPotion", BrokenHandPotion);
+        Recipes.Add("PoisonPotion", PoisonPotion);
+        Recipes.Add("LovePotion", LovePotion);
+        Recipes.Add("GrowthPotion", GrowthPotion);
+        Recipes.Add("StrengthPotion", StrengthPotion);
+        Recipes.Add("HastePotion", HastePotion);
 
         // Randomly select an array from the list
         System.Random random = new System.Random();

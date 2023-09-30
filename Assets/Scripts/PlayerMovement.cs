@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     float speedmod = 0.04f;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         
     }
@@ -16,5 +17,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(Input.GetAxis("Horizontal")*speedmod, Input.GetAxis("Vertical")*speedmod, 0));
+
     }
 }

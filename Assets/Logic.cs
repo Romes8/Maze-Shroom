@@ -6,6 +6,8 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Progress;
+using TMPro;
+using UnityEngine.UI;
 
 public class Logic : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class Logic : MonoBehaviour
     string selected_recipe_name = "";
     List<string> selected_recipe_content = new List<string>();
     List<string> picked_content = new List<string>();
+
+    public TextMeshProUGUI text;
+    public GameObject img;
 
 
     void Start()
@@ -38,11 +43,11 @@ public class Logic : MonoBehaviour
         string[] HastePotion = { "desert", "desert", "crystal", "forest" };
 
         // Add string arrays to the list
-        Recipes.Add("PoisonPotion", PoisonPotion);
-        Recipes.Add("LovePotion", LovePotion);
-        Recipes.Add("GrowthPotion", GrowthPotion);
-        Recipes.Add("StrengthPotion", StrengthPotion);
-        Recipes.Add("HastePotion", HastePotion);
+        Recipes.Add("Poison Potion", PoisonPotion);
+        Recipes.Add("Love Potion", LovePotion);
+        Recipes.Add("Growth Potion", GrowthPotion);
+        Recipes.Add("Strength Potion", StrengthPotion);
+        Recipes.Add("Haste Potion", HastePotion);
 
         // Randomly select an array from the list
         System.Random random = new System.Random();
@@ -50,6 +55,7 @@ public class Logic : MonoBehaviour
 
 
         selected_recipe_name = Recipes.Keys.ToArray()[randomIndex];
+        text.text = selected_recipe_name;
         string[] selectedrecipe = Recipes[selected_recipe_name];
 
         // Convert the string array to a list of strings
@@ -109,6 +115,7 @@ public class Logic : MonoBehaviour
                 print(selected_recipe_name.ToUpper());
 
                 //redirect to the end screen
+                img.SetActive(true);
             }
 
 

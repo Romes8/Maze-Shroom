@@ -20,7 +20,16 @@ public class Logic : MonoBehaviour
     List<string> picked_content = new List<string>();
 
     public TextMeshProUGUI text;
-    public GameObject img;
+    public GameObject win;
+    public GameObject lose;
+    public AudioClip winMusic;
+
+    public Sprite PoisonPotionSprite;
+    public Sprite LovePotionSprite;
+    public Sprite GrowthPotionSprite;
+    public Sprite StrengthPotionSprite;
+    public Sprite HastePotionSprite;
+    public Image PotionToChange;
 
 
     void Start()
@@ -58,8 +67,29 @@ public class Logic : MonoBehaviour
         text.text = selected_recipe_name;
         string[] selectedrecipe = Recipes[selected_recipe_name];
 
-        // Convert the string array to a list of strings
-        selected_recipe_content = new List<string>(selectedrecipe);
+        if (selected_recipe_name.Equals("Poison Potion"))
+        {
+            PotionToChange.sprite = PoisonPotionSprite;
+        }
+        else if (selected_recipe_name.Equals("Love Potion"))
+        {
+            PotionToChange.sprite = LovePotionSprite;
+        }
+        else if (selected_recipe_name.Equals("Growth Potion"))
+        {
+            PotionToChange.sprite = GrowthPotionSprite;
+        }
+        else if (selected_recipe_name.Equals("Strength Potion"))
+        {
+            PotionToChange.sprite = StrengthPotionSprite;
+        }
+        else
+        {
+            PotionToChange.sprite = HastePotionSprite;
+        }
+
+            // Convert the string array to a list of strings
+            selected_recipe_content = new List<string>(selectedrecipe);
 
         print("Picked potion is:");
         print(selected_recipe_name);
@@ -115,7 +145,14 @@ public class Logic : MonoBehaviour
                 print(selected_recipe_name.ToUpper());
 
                 //redirect to the end screen
-                img.SetActive(true);
+                GetComponent<AudioSource>().clip = winMusic;
+                GetComponent<AudioSource>().loop = false;
+                GetComponent<AudioSource>().Play();
+                win.SetActive(true);
+            }
+            else
+            {
+                lose.SetActive(true);
             }
 
 
@@ -125,6 +162,6 @@ public class Logic : MonoBehaviour
     static bool AreListsEqualIgnoringOrder<T>(List<T> list1, List<T> list2)
     {
         // Check if the lists have the same elements, regardless of order
-        return list1.Count == list2.Count && list1.All(list2.Contains);
+        return list1.OrderBy(x => x).SequenceEqual(list2.OrderBy(x => x));
     }
 }
